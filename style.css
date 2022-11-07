@@ -22,11 +22,25 @@ body {
 }
 
 nav {
+  align-items: center;
   background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
   padding: 20px;
+  transition: width 0.6s linear;
   width: 80px;
 }
 
 nav.active {
   width: 350px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 0;
 }
