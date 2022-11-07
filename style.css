@@ -28,6 +28,7 @@ nav {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
+  overflow: hidden;
   padding: 20px;
   transition: width 0.6s linear;
   width: 80px;
@@ -46,14 +47,14 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  transition: width 0.6s linear;
+  transition: width 0.3s linear;
   width: 0;
 }
 
 nav ul li {
   opacity: 0;
   transform: rotateY(0deg);
-  transition: transform 0.6s linear, opacity 0.6s linear;
+  transition: transform 0.3s linear, opacity 0.2s linear;
 }
 
 nav.active ul li {
@@ -61,9 +62,46 @@ nav.active ul li {
   transform: rotateY(360deg);
 }
 
+nav.active .icon .line1 {
+  transform: rotate(-765deg) translateY(5.5px);
+}
+
+nav.active .icon .line2 {
+  transform: rotate(765deg) translateY(-5.5px);
+}
+
 nav ul a {
   color: #000;
   margin: 0 10px;
   position: relative;
   text-decoration: none;
+}
+
+.icon {
+  background-color: #fff;
+  border: 0;
+  cursor: pointer;
+  height: 30px;
+  padding: 0;
+  position: relative;
+  transition: transform 0.6s linear;
+  width: 30px;
+}
+
+.icon:focus {
+  outline: 0;
+}
+
+.icon .line {
+  background-color: #5290f9;
+  height: 2px;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  width: 20px;
+}
+
+.icon .line2 {
+  top: auto;
+  bottom: 10px;
 }
